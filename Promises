@@ -1,0 +1,107 @@
+Promise
+
+High level overview - pictures/screenshots
+
+
+
+Your friend                                       Promise
+Can get tacos/Cannot get tacos                    Promise Value
+Can get tacos                                     Fulfill promise
+Cannot get tacos                                  Reject promise
+Set up the table                                  Success callback
+Cook Pasta                                        Failure callback
+
+
+
+
+A promise is a proxy for a value not necessarily known when the promise is created.
+It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. 
+
+A promise is a proxy for a value  -  your friend made a promise that he will let you know whether he can or cannot get tacos which is the promise value.
+
+The promise value is not necessarily known when the promise is created - you dont know which one of them is the value when your friend made the promise. He can get tacos or not get tacos. You dont necessarily know that value.
+
+Promise allows you to associate handlers with an asynchronous actions's eventual success value or failure reason - Decide ahead of time what has to be done when the promise is eventually fulfilled or rejected. That is,either setting up the table or cooking pasta.
+
+A promise is simply an object in Javascript.
+A promise is always in one of the three states
+ -> pending : which is initial state, neither fulfilled nor rejected.
+ -> fulfilled : meaning that the operation completed successfully.
+ -> Rejected : meaning that the operation failed.
+ 
+ 
+ Need of Promise
+ 
+ Promises help us deal with asynchronous code in a far more simpler way compared to callbacks.
+ Callback hell can be avoided with Promises.
+ 
+ 
+ How to create a Promise?
+ 
+ const promise = new Promise()
+ 
+ 
+ 
+ 
+ 
+ How to fulfill or reject the promise? Promise constructor function accepts one function as an argument
+ 
+ const promise = new Promise(() => {
+ 
+ })
+ 
+ 
+ this arrow function automatically receives 2 argument resolve and reject
+ 
+ Resolve and Reject both are functions.
+ const promise = new Promise((resolve, reject) => {
+ 
+ })
+ 
+ 
+ 
+ Resolve is a function which when called changes the status of the promise from pending to fulfilled. 
+ const promise = new Promise((resolve, reject) => {
+         resolve()
+ })
+ 
+ Reject is a function which when called changes the status of the promise from pending to Rejected. 
+ const promise = new Promise((resolve, reject) => {
+         reject()
+ })
+ 
+ 
+ Both these functions are called after an async operation. For simplicity we can use setTimeout().
+ 
+ Resolve
+ const promise = new Promise((resolve, reject) => {
+         setTimeout(() => {
+         
+         //Food truck found
+         //Change status from pending to fulfilled
+         
+         resolve()
+         },5000)
+ })
+ 
+ 
+ Reject
+ const promise = new Promise((resolve, reject) => {
+         setTimeout(() => {
+         
+         //Food truck not found
+         //Change status from pending to rejected
+         
+         reject()
+         },5000)
+ })
+ 
+ 
+ Execute callback functions based on the status change
+ 
+ 
+ 
+ 
+ 
+ 
+ 
