@@ -99,6 +99,34 @@ A promise is always in one of the three states
  
  Execute callback functions based on the status change
  
+ when promise if fullfilled
+ const onFulfillment = () => {
+       
+       //when resolve was called
+       console.log("Set up table to eat tacos")
+ 
+ }
+ 
+ 
+ when promise is rejected
+ const onRejection = () => {
+ 
+       //reject was called
+       console.log('Start cooking pasta')
+ 
+ }
+ 
+ 
+ Promise status : if status changes from pending to fulfilled? promise.then() is executed.
+ Promise status : if status changes from pending to rejected? promise.catch() is executed.
+ 
+ promise.then(onFulfillment)
+ promise.catch(onRejection)
+ 
+ good thing about promise is that it will automatically inject, the argument passed to resolve as the argument to the onFulfillment callback
+ and the argument passed to reject as the argument to the onRejection callback
+ 
+ 
  
  
  
