@@ -1,15 +1,19 @@
 This method helps to convert data into UI elements.
 
+Purpose: Render lists from array data on UI.
+JSX Elements: Transform array items into JSX
+Inline Rendering: Directly into JSX ------------- {items.map(item => <li key={item.id}>{item.name}</li>)}
+Key Prop: Assign unique key for optimized re-renders. --------------- <div key={item.id}>{item.name}</div>
+
+
 function App(){
 
 let foodItems = ['dal', 'milk', 'Vegetables']
-
-return (
-<>
-{foodItems.map((item) => (<li class="list-group-item"> {item} </li>))}
-</>
+return ( 
+   <> 
+     {foodItems.map((item) => (<li class="list-group-item"> {item} </li>))} 
+   </> 
 )
-
 }
 
 In above code, if the number of items in list are uncertain and also we cannot use "for" loop in return statement so we use "map method" here to display items of list (foodItems)
