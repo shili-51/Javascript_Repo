@@ -1,0 +1,16 @@
+This method helps to convert data into UI elements.
+
+function App(){
+
+let foodItems = ['dal', 'milk', 'Vegetables']
+
+return (
+<>
+{foodItems.map((item) => (<li class="list-group-item"> {item} </li>))}
+</>
+)
+
+}
+
+In above code, if the number of items in list are uncertain and also we cannot use for loop in return statement so we use map method here to display items of list (foodItems)
+on UI.
