@@ -12,5 +12,5 @@ return (
 
 }
 
-In above code, if the number of items in list are uncertain and also we cannot use for loop in return statement so we use map method here to display items of list (foodItems)
+In above code, if the number of items in list are uncertain and also we cannot use "for" loop in return statement so we use "map method" here to display items of list (foodItems)
 on UI.
