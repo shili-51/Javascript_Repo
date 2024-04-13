@@ -1,0 +1,51 @@
+Javascript execution context - jo bhi file humne banai hai usko javascript run kaise karegi / execute kaise karegi
+
+For running our files, javascript runs our programs into 2 phases :
+1) Memory Creation Phase/ Creation Phase (memory is allocated for declared variables, functions etc, execution is not performed)
+2) Execution Phase (execution of functions functionality like addition, multiplication etc gets executed in this phase)
+
+
+Javascript Code ---> Global Execution Context (this is used to refer Global Execution Context, this contains global execution context) 
+Global Execution Context ---> (Gets Created First - its different for Node Js and different for Browser (this keyword contains windows object) ) 
+
+
+Types of Execution Context
+---> Global Execution Context
+---> Functional Execution Context
+---> Eval Execution Context (property of global object)
+
+
+Concept Understanding : 
+
+Sample Code - 
+
+let val1 = 5
+let val2 = 10
+function addNum(num1, num2){
+    let total = num1 + num2
+    return total
+}
+let result1 = addNum(val1, val2);
+let result2 = addNum(10, 2);
+
+
+Steps of how above Javascript Code runs - 
+
+1) Global Execution also called as global environment - code is run first by Global Execution and it is allocated to "this" variable.
+2) Memory Phase - variables are cumulated and assigned "undefined" values -
+   val1 -> undefined
+   val2 -> undefined
+   addNum -> function defination
+   result1 -> undefined
+   result2 -> undefined
+3) Execution Phase - 
+   val1 -> 10
+   val2 -> 5
+   addNum -> function defination // no need and work in Execution Phase
+   result1 -> 
+      addNum - created its own new Execution Context
+               Execution Context
+               New Variable environment + Execution Thread
+
+
+   result2 -> undefined
