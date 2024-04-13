@@ -1,4 +1,6 @@
-Javascript execution context - jo bhi file humne banai hai usko javascript run kaise karegi / execute kaise karegi
+Javascript execution context - jo bhi file humne banai hai usko javascript run kaise karegi / execute kaise karegi, 
+
+Execution Context - once its entire work is completed , it gets deleted
 
 For running our files, javascript runs our programs into 2 phases :
 1) Memory Creation Phase/ Creation Phase (memory is allocated for declared variables, functions etc, execution is not performed)
@@ -42,10 +44,33 @@ Steps of how above Javascript Code runs -
    val1 -> 10
    val2 -> 5
    addNum -> function defination // no need and work in Execution Phase
-   result1 -> 
+   result1 -> 15
       addNum - created its own new Execution Context
                Execution Context
                New Variable environment + Execution Thread
+                   1) Memory Phase -
+                       val1 -> undefined
+                       val2 -> undefined
+                       total -> undefined
+
+                   2) Execution Context -
+                       num1 -> 10
+                       num2 -> 5
+                       total -> 15 (returned to our parent Global Execution (point - 1)
+   
+     
 
 
-   result2 -> undefined
+     result2 -> 12
+        addNum - created its own new Execution Context
+                 Execution Context
+                 New Variable environment + Execution Thread
+                     1) Memory Phase -
+                        val1 -> undefined
+                        val2 -> undefined
+                        total -> undefined
+
+                     2) Execution Context -
+                        num1 -> 10
+                        num2 -> 2
+                        total -> 12 (returned to our parent Global Execution (point - 1)
