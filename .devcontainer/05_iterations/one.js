@@ -18,3 +18,10 @@ for(let i = 1; i <= 20; i++){
     }
     console.log(`Value of i is ${i}`);
 }
+
+
+// for of loop
+const greetings = "Hello World!"
+for(const greet of greetings){
+    console.log(`Each char is ${greet}`)
+}
