@@ -18,4 +18,3 @@ window.addEventListener('keydown' , (e) => {
 </div>`
 })
 
-// document.querySelector('#key').addEventListener('click')
