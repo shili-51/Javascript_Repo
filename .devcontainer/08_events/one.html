@@ -31,6 +31,25 @@
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
 
+    
+
+    // Types of Events - Event Bubbling and Event Capturing
+    
+    // Event Bubbling - if a child div is called and parent div is called - then first child will be printed then parent
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("google clicked");
+    // }, false) -----> if we set false here Event Bubbling is enabled
+
+    // Event Capturing - if a child div is called and parent div is called - then first parent will be printed then child
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("google clicked");
+    // }, true) -----> if we set false here Event Capturing is enabled
+
+    
+
+
+    
+
     // document.getElementById('images').addEventListener('click', function(e){
     //     console.log("clicked inside the ul");
     // }, false)
@@ -39,15 +58,27 @@
     //     console.log("owl clicked");
     //     e.stopPropagation()
     // }, false)
+
+
+    // Event Propagation - 
+    // Images is parent div's Id and owl is child <li> tag id
+    // when we clicked on owl, first child would be called then parent would be called - Bubbling Event Propogation
+    // when we clicked on owl, first parent would be called then child would be called - Event Capturing
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("google clicked");
+    // }, true) -----> this decides which Event Propagation is enabled -- if false (Bubbling) else (Event Capturing)
+
+    
     
     // document.getElementById('google').addEventListener('click',function(e){
     //     e.preventDefault();
-    //     e.stopPropagation()
+    //     e.stopPropagation()   ---> if event bubbling is there, then to ensure only child element gets printed and doesnot navigate to parent
     //     console.log("google clicked");
     // }, false)
    
     
     document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);   // <li> of each image tag
         console.log(e.target.tagName);
         if (e.target.tagName === 'IMG') {
             console.log(e.target.id);
