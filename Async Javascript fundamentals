@@ -1,0 +1,11 @@
+Javascript - Synchronous and Single threaded.
+
+Execution Context - Each operation waits for the last one to complete before executing.
+
+
+Blocking Code vs Non Blocking code
+
+--> Blocking Code - block the flow of program --> Read file synchronously
+--> Non Blocking Code - Does not block the flow of program --> Read file Asynchronously
+
+Video - 37 (chai aur code javascript)
