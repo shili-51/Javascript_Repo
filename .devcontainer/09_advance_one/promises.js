@@ -1,16 +1,22 @@
+const promiseOne = new Promise() ----> promise created
+
 const promiseOne = new Promise(function(resolve, reject){
     //Do an async task
     // DB calls, cryptography, network
     setTimeout(function(){
         console.log('Async task is compelete');
-        resolve()
+        resolve() --> to connect promise to "then" part
     }, 1000)
 })
 
+// if promise is resolved this will et executed
 promiseOne.then(function(){
     console.log("Promise consumed");
 })
 
+
+
+// another way of writing promise without declaring promise into a variable
 new Promise(function(resolve, reject){
     setTimeout(function(){
         console.log("Async task 2");
@@ -20,6 +26,10 @@ new Promise(function(resolve, reject){
 }).then(function(){
     console.log("Async 2 resolved");
 })
+
+
+
+
 
 const promiseThree = new Promise(function(resolve, reject){
     setTimeout(function(){
@@ -31,6 +41,9 @@ promiseThree.then(function(user){
     console.log(user);
 })
 
+
+
+// if we get data from network etc
 const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
         let error = true
@@ -47,10 +60,14 @@ const promiseFour = new Promise(function(resolve, reject){
     console.log(user);
     return user.username
 }).then((username) => {
-    console.log(username);
+    console.log(username);    // contains result of previous then
 }).catch(function(error){
     console.log(error);
-}).finally(() => console.log("The promise is either resolved or rejected"))
+}).finally(() => console.log("The promise is either resolved or rejected")) // final status whether promise is resolved or rejected
+
+
+
+
 
 
 
@@ -76,11 +93,14 @@ async function consumePromiseFive(){
 
 consumePromiseFive()
 
+
+
+
+
 // async function getAllUsers(){
 //     try {
 //         const response = await fetch('https://jsonplaceholder.typicode.com/users')
-
-//         const data = await response.json()
+        // const data = await response.json()   // we put await before response.json because string takes time to convert into json that's why we use await
 //         console.log(data);
 //     } catch (error) {
 //         console.log("E: ", error);
